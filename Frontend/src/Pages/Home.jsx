@@ -29,10 +29,6 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-10">
       <div className="max-w-3xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-blue-700 mb-4 text-center">Welcome to QuizApp!</h1>
-        <p className="text-lg text-gray-700 mb-8 text-center">
-          Sharpen your mind and test your knowledge with our fun and challenging quizzes.
-        </p>
         <div className="grid gap-6 md:grid-cols-2">
           {quizzes.map((quiz) => (
             <div key={quiz._id} className="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">

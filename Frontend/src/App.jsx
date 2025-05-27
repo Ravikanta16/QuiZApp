@@ -9,6 +9,7 @@ import Result from './Pages/result';
 import CreateQuiz from './Pages/createQuiz';
 import AdminHome from './Pages/adminHome';
 import UserProtectedWrapper from './Pages/userProtectedWrapper';
+import Start from './Pages/Start';
 
 const App = () => {
 
@@ -16,7 +17,8 @@ const App = () => {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={ 
+        <Route path="/" element={<Start />} />
+        <Route path="/home" element={ 
           <UserProtectedWrapper>
             <Home />
           </UserProtectedWrapper>

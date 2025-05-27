@@ -7,7 +7,7 @@ function Result() {
   const navigate = useNavigate();
 
   if (!location.state) {
-    navigate("/");
+    navigate("/home");
     return null;
   }
 

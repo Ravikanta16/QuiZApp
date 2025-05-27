@@ -26,7 +26,7 @@ const UserLogin = () => {
             setUserData(data.user)  
             localStorage.setItem('token',data.token)
             if(data.user.role==='user'){
-                navigate('/')
+                navigate('/home')
             }
             else{
                 navigate('/admin')
@@ -37,7 +37,6 @@ const UserLogin = () => {
 
         setUserName('')
         setPassword('')
-        // navigate('/')
     }
     return (
         <div className='p-7 h-screen w-full flex items-center justify-center flex-col'>

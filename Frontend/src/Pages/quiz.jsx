@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from 'axios';
+import { UserDataContext } from '../context/UserContext';
+import { useContext } from 'react';
 
 const Quiz = () => {
   const { id } = useParams();
@@ -9,6 +11,7 @@ const Quiz = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [selectedOption, setSelectedOption] = useState(null);
+  const {userData,setUserData}=useContext(UserDataContext)
 
 
   useEffect(() => {
@@ -77,7 +80,12 @@ const Quiz = () => {
             className="border text-white bg-green-600 p-1 rounded-md">Next</button>
           <p className="mt-1">Question {currentQuestionIndex + 1} of {quiz.questions.length}</p>
         </div>
-        <Link to="/" className="text-blue-600 hover:underline">Back to Home</Link>
+        {userData.role === 'admin' ? (
+          <Link to="/admin" className="text-blue-600 hover:underline">Back to Home</Link>
+          ) : (
+          <Link to="/home" className="text-blue-600 hover:underline">Back to Home</Link>
+        )}
+
       </div>
     </div>
   );

@@ -38,6 +38,7 @@ const UserProtectedWrapper = ({ children }) => {
           getUserProfile();
         }
     }, [token,navigate]);
+
     return <>{children}</>;
 };
 
